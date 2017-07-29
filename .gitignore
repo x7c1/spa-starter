@@ -1,0 +1,9 @@
+# node settings
+node_modules
+
+# compiled files
+dist
+
+# IntelliJ settings
+.idea/
+*.iml
