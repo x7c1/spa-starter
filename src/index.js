@@ -1,5 +1,12 @@
 import _ from 'lodash';
 import './style.css';
+import owl from './assets/owl.png'
+
+const createImage = () => {
+  const image = new Image();
+  image.src = owl;
+  return image;
+};
 
 const createElement = () => {
   const element = document.createElement('div');
@@ -9,7 +16,11 @@ const createElement = () => {
 
 const render = () => {
   const element = createElement();
-  document.body.appendChild(element);
+
+  const area = document.getElementsByClassName('sample-image-area')[0];
+  area.insertBefore(createImage(), area.firstChild);
+
+  document.body.insertBefore(element, document.body.firstChild);
 };
 
 render();
