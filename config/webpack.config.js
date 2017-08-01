@@ -1,3 +1,4 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
@@ -11,10 +12,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -27,6 +28,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new ExtractTextPlugin('[name].[contenthash].css', {
+      allChunks : true,
     })
   ]
 };
