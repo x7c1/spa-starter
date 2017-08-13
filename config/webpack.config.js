@@ -13,8 +13,26 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
+          fallback: {
+            loader: 'style-loader',
+          },
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                importLoaders: 1,
+              }
+            }, {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: 'inline',
+                config: {
+                  path: 'config/postcss.config.js',
+                },
+              }
+            },
+          ]
         })
       },
       {
@@ -30,7 +48,7 @@ module.exports = {
       template: 'src/index.html'
     }),
     new ExtractTextPlugin('[name].[contenthash].css', {
-      allChunks : true,
+      allChunks: true,
     })
   ]
 };
