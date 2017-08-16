@@ -1,0 +1,32 @@
+@import './palette';
+
+/* sample comment */
+.sample-image-area {
+  font-size: 0.9rem;
+  font-family: monospace;
+  padding: 1rem;
+  border: 1px dotted gray;
+  background-color: aliceblue;
+
+  a {
+    color: $sample_fg;
+  }
+}
+
+.sample-for-autoprefixer {
+  border-radius: 5px;
+  display: flex;
+}
+
+/* sample to confirm options.safe mode of cssnano */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.box {
+  animation-name: fadeOut;
+}
