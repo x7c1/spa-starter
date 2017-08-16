@@ -13,14 +13,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: {
-            loader: 'style-loader',
-          },
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
+
+                // rf. https://github.com/webpack-contrib/css-loader#importloaders
                 importLoaders: 1,
               }
             }, {
@@ -30,6 +30,36 @@ module.exports = {
                 config: {
                   path: 'config/postcss.config.js',
                 },
+              }
+            },
+          ]
+        })
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+
+                // rf. https://github.com/webpack-contrib/css-loader#importloaders
+                importLoaders: 2,
+              }
+            }, {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: 'inline',
+                config: {
+                  path: 'config/postcss.config.js',
+                },
+              }
+            }, {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
               }
             },
           ]

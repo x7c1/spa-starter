@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import './style.css';
+import './index.scss';
 import owl from './assets/owl.png'
 
 const createImage = () => {
