@@ -85,7 +85,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new ExtractTextPlugin('[name].[contenthash].css', {
+    new ExtractTextPlugin('styles/[name].[contenthash].css', {
       allChunks: true,
     })
   ]
