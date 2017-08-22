@@ -17,8 +17,8 @@ const createElement = () => {
 const render = () => {
   const element = createElement();
 
-  const area = document.getElementsByClassName('sample-image-area')[0];
-  area.insertBefore(createImage(), area.firstChild);
+  const area = document.getElementsByClassName('js-area')[0];
+  area.appendChild(createImage());
 
   document.body.insertBefore(element, document.body.firstChild);
 };

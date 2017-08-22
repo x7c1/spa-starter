@@ -1,12 +1,38 @@
 @import './palette';
 
 /* sample comment */
-.sample-image-area {
+
+.sample-list {
+  padding: 0;
+
+  display: flex;
+  list-style: none;
+
+  .sample {
+    margin-left: 1rem;
+
+    .js-area, .css-area {
+      width: 64px;
+      height: 64px;
+      background: {
+        color: aliceblue;
+      }
+      border: 1px dotted gray;
+    }
+
+    .css-area {
+      background: {
+        image: url('./assets/owl.png');
+        repeat: no-repeat;
+      }
+    }
+
+  }
+}
+
+.footer {
   font-size: 0.9rem;
   font-family: monospace;
-  padding: 1rem;
-  border: 1px dotted gray;
-  background-color: aliceblue;
 
   a {
     color: $sample_fg;
