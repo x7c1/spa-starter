@@ -71,7 +71,8 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192,
+              // limit: 8192,
+              limit: 1024,
 
               // used by file-loader if image-size > limit
               name: 'images/[name].[hash].[ext]',
@@ -85,7 +86,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new ExtractTextPlugin('styles/[name].[contenthash].css', {
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash].css',
       allChunks: true,
     })
   ]
