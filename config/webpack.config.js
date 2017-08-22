@@ -66,9 +66,17 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|jpg)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+
+              // used by file-loader if image-size > limit
+              name: 'images/[name].[hash].[ext]',
+            },
+          },
         ],
       }
     ]
