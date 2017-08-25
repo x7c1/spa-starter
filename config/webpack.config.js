@@ -12,33 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          publicPath: '../',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-
-                // rf. https://github.com/webpack-contrib/css-loader#importloaders
-                importLoaders: 1,
-              }
-            }, {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: 'inline',
-                config: {
-                  path: 'config/postcss.config.js',
-                },
-              }
-            },
-          ]
-        })
-      },
-      {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
 
