@@ -14,6 +14,7 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
+          publicPath: '../',
           use: [
             {
               loader: 'css-loader',
@@ -39,6 +40,7 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
+          publicPath: '../',
           use: [
             {
               loader: 'css-loader',
@@ -75,7 +77,7 @@ module.exports = {
               limit: 1024,
 
               // used by file-loader if image-size > limit
-              name: 'images/[name].[hash].[ext]',
+              name: 'media/[name].[hash].[ext]',
             },
           },
         ],
@@ -87,7 +89,7 @@ module.exports = {
       template: 'src/index.html'
     }),
     new ExtractTextPlugin({
-      filename: '[name].[contenthash].css',
+      filename: 'styles/[name].[contenthash].css',
       allChunks: true,
     })
   ]
