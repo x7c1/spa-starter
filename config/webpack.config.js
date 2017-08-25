@@ -41,7 +41,10 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
+
+          // required in order to locate css files to sub-directory
           publicPath: '../',
+
           use: [
             {
               loader: 'css-loader',
