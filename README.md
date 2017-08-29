@@ -4,16 +4,29 @@ Sample application to learn modern SPA development.
 
 ## Current Structure
 
+
 ```
 .
 ├── config
+│   ├── postcss.config.js
 │   └── webpack.config.js
 ├── dist
 │   ├── bundle.js
-│   └── index.html
+│   ├── bundle.js.map
+│   ├── index.html
+│   ├── media
+│   │   └── owl.[hash].png
+│   └── styles
+│       ├── main.[hash].css
+│       └── main.[hash].css.map
 └── src
+    ├── assets
+    │   └── owl.png
+    ├── index.css
     ├── index.html
-    └── index.js
+    ├── index.js
+    ├── index.scss
+    └── palette.scss
 ```
 
 ## Building
