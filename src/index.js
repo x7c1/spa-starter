@@ -1,4 +1,13 @@
 import _ from 'lodash';
+import './index.css';
+import './index.scss';
+import owl from './assets/owl.png'
+
+const createImage = () => {
+  const image = new Image();
+  image.src = owl;
+  return image;
+};
 
 const createElement = () => {
   const element = document.createElement('div');
@@ -8,7 +17,11 @@ const createElement = () => {
 
 const render = () => {
   const element = createElement();
-  document.body.appendChild(element);
+
+  const area = document.getElementsByClassName('js-area')[0];
+  area.appendChild(createImage());
+
+  document.body.insertBefore(element, document.body.firstChild);
 };
 
 render();
