@@ -3,6 +3,8 @@ import './index.css';
 import './index.scss';
 import owl from './assets/owl.png'
 
+const debug = require('debug')('spa-starter:sample');
+
 const createImage = () => {
   const image = new Image();
   image.src = owl;
@@ -16,12 +18,14 @@ const createElement = () => {
 };
 
 const render = () => {
+  debug('[init] render');
   const element = createElement();
 
   const area = document.getElementsByClassName('js-area')[0];
   area.appendChild(createImage());
 
   document.body.insertBefore(element, document.body.firstChild);
+  debug('[done] render');
 };
 
 render();
