@@ -5,8 +5,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
+    `webpack-hot-middleware/client?path=/__webpack_hmr`,
     './src/index.js',
-    `webpack-hot-middleware/client?path=/__webpack_hmr&reload=true`,
   ],
   devtool: 'source-map',
   output: {
