@@ -73,6 +73,7 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'styles/[name].[contenthash].css',
       allChunks: true,
+      disable: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
   ]
