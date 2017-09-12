@@ -1,9 +1,13 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    './src/index.js',
+    `webpack-hot-middleware/client?path=/__webpack_hmr&reload=true`,
+  ],
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
@@ -69,6 +73,7 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'styles/[name].[contenthash].css',
       allChunks: true,
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 };
