@@ -1,6 +1,6 @@
 const express = require('express');
 const debug = require('debug')('spa-starter:dev');
-const config = require('../../config/webpack.config');
+const config = require('../../config/webpack.dev');
 const webpack = require('webpack');
 
 const app = express();

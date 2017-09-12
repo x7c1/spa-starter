@@ -9,7 +9,7 @@ Sample application to learn modern SPA development.
 .
 ├── config
 │   ├── postcss.config.js
-│   └── webpack.config.js
+│   └── webpack.common.js
 ├── dist
 │   ├── bundle.js
 │   ├── bundle.js.map
