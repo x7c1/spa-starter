@@ -1,9 +1,15 @@
 const express = require('express');
 const debug = require('debug')('spa-starter:dev');
+const config = require('../../config/webpack.config');
+const webpack = require('webpack');
 
 const app = express();
 
-app.use(express.static('dist'));
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  publicPath: '/',
+}));
 
 app.listen(3000);
 
