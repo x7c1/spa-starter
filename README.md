@@ -4,12 +4,13 @@ Sample application to learn modern SPA development.
 
 ## Current Structure
 
-
 ```
 .
 ├── config
 │   ├── postcss.config.js
-│   └── webpack.common.js
+│   ├── webpack.common.js
+│   ├── webpack.dev.js
+│   └── webpack.prod.js
 ├── dist
 │   ├── bundle.js
 │   ├── bundle.js.map
@@ -17,11 +18,12 @@ Sample application to learn modern SPA development.
 │   ├── media
 │   │   └── owl.[hash].png
 │   └── styles
-│       ├── main.[hash].css
-│       └── main.[hash].css.map
+│       ├── app.[hash].css
+│       └── app.[hash].css.map
 └── src
     ├── assets
     │   └── owl.png
+    ├── content.js
     ├── index.css
     ├── index.html
     ├── index.js
