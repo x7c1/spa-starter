@@ -18,5 +18,6 @@ app.use(require('webpack-hot-middleware')(compiler, {
   path: dev.server.hmr.path,
 }));
 
-app.listen(dev.server.port);
-debug(`Server is now running at ${dev.server.url}.`);
+app.listen(dev.server.port, () => {
+  debug(`Server is now running at ${dev.server.url}.`);
+});
