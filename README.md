@@ -8,6 +8,8 @@ Sample application to learn modern SPA development.
 .
 ├── config
 │   ├── postcss.config.js
+│   ├── project.dev.js
+│   ├── project.paths.js
 │   ├── webpack.common.js
 │   ├── webpack.dev.js
 │   └── webpack.prod.js
