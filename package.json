@@ -20,6 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "better-npm-run": "^0.1.0",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.7",
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
