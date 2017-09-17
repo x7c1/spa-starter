@@ -1,16 +1,16 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const paths = require('./project.paths');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin([
-      path.resolve(__dirname, '..', 'dist'),
+      paths.dist.directory,
     ], {
-      root: path.resolve(__dirname, '..'),
+      root: paths.root.directory,
     }),
     new ExtractTextPlugin({
       filename: 'styles/[name].[contenthash].css',

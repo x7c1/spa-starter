@@ -1,6 +1,6 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const paths = require('./project.paths');
 
 module.exports = {
   entry: {
@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../', 'dist')
+    path: paths.dist.directory,
   },
   module: {
     rules: [
