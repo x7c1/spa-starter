@@ -1,10 +1,10 @@
 const express = require('express');
 const debug = require('debug')('spa-starter:dev');
-const config = require('../../config/webpack.dev');
 const webpack = require('webpack');
+const config = require('../../config/webpack.dev');
+const dev = require('../../config/project.dev');
 
 const app = express();
-
 const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -15,9 +15,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler, {
-  path: '/__webpack_hmr',
+  path: dev.server.hmr.path,
 }));
 
-app.listen(3000);
-
-debug(`Server is now running at http://localhost:3000.`);
+app.listen(dev.server.port);
+debug(`Server is now running at ${dev.server.url}.`);

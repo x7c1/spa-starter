@@ -1,12 +1,13 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const dev = require('./project.dev');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
   entry: {
     app: [
-      `webpack-hot-middleware/client?path=/__webpack_hmr`,
+      `webpack-hot-middleware/client?path=${dev.server.hmr.url}`,
     ],
   },
   plugins: [
