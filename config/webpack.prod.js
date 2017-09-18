@@ -1,6 +1,5 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const paths = require('./project.paths');
 const common = require('./webpack.common');
