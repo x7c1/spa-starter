@@ -5,13 +5,13 @@ const paths = require('./project.paths');
 module.exports = {
   entry: {
     app: [
-      './src/index.js',
+      paths.src('index.js'),
     ],
   },
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: paths.dist.directory,
+    path: paths.dist(),
   },
   module: {
     rules: [
@@ -68,7 +68,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: paths.src('index.html'),
     }),
   ]
 };

@@ -8,9 +8,9 @@ const common = require('./webpack.common');
 module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin([
-      paths.dist.directory,
+      paths.dist(),
     ], {
-      root: paths.root.directory,
+      root: paths.root(),
     }),
     new ExtractTextPlugin({
       filename: 'styles/[name].[contenthash].css',

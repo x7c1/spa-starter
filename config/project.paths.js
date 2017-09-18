@@ -6,11 +6,12 @@ const fromRoot = (...names) => {
   return path.resolve(...args);
 };
 
+const from = name => {
+  return fromRoot.bind(null, name);
+};
+
 module.exports = {
-  root: {
-    directory: fromRoot('.'),
-  },
-  dist: {
-    directory: fromRoot('dist'),
-  },
+  root: from('.'),
+  src: from('src'),
+  dist: from('dist'),
 };
