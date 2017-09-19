@@ -4,12 +4,15 @@ Sample application to learn modern SPA development.
 
 ## Current Structure
 
-
 ```
 .
 ├── config
 │   ├── postcss.config.js
-│   └── webpack.config.js
+│   ├── project.dev.js
+│   ├── project.paths.js
+│   ├── webpack.common.js
+│   ├── webpack.dev.js
+│   └── webpack.prod.js
 ├── dist
 │   ├── bundle.js
 │   ├── bundle.js.map
@@ -17,11 +20,12 @@ Sample application to learn modern SPA development.
 │   ├── media
 │   │   └── owl.[hash].png
 │   └── styles
-│       ├── main.[hash].css
-│       └── main.[hash].css.map
+│       ├── app.[hash].css
+│       └── app.[hash].css.map
 └── src
     ├── assets
     │   └── owl.png
+    ├── content.js
     ├── index.css
     ├── index.html
     ├── index.js
@@ -29,10 +33,16 @@ Sample application to learn modern SPA development.
     └── palette.scss
 ```
 
-## Building
-
-To generate `./dist` directory, run following:
+## Running the Project
 
 ```
-npm run build
+# start the develompent server
+$ npm run start
+```
+
+## Building for Production
+
+```
+# generate `./dist` directory
+$ npm run build
 ```

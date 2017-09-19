@@ -1,13 +1,17 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const paths = require('./project.paths');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: [
+      paths.src('index.js'),
+    ],
+  },
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../', 'dist')
+    path: paths.dist(),
   },
   module: {
     rules: [
@@ -64,11 +68,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: paths.src('index.html'),
     }),
-    new ExtractTextPlugin({
-      filename: 'styles/[name].[contenthash].css',
-      allChunks: true,
-    })
   ]
 };
