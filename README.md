@@ -33,10 +33,16 @@ Sample application to learn modern SPA development.
     └── palette.scss
 ```
 
-## Building
-
-To generate `./dist` directory, run following:
+## Running the Project
 
 ```
-npm run build
+# start the develompent server
+$ npm run start
+```
+
+## Building for Production
+
+```
+# generate `./dist` directory
+$ npm run build
 ```
