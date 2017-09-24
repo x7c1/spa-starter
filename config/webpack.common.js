@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const paths = require('./project.paths');
 
 module.exports = {
@@ -7,10 +8,13 @@ module.exports = {
     app: [
       paths.src('index.js'),
     ],
+    vendor: [
+      'lodash',
+    ],
   },
   devtool: 'source-map',
   output: {
-    filename: 'bundle.js',
+    filename: 'scripts/[name].[chunkhash].js',
     path: paths.dist(),
   },
   module: {
@@ -69,6 +73,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: paths.src('index.html'),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'runtime'],
     }),
   ]
 };
