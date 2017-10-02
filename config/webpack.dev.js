@@ -14,6 +14,9 @@ module.exports = merge(common, {
   },
   output: {
     filename: dist.scripts('[name].[hash].js'),
+
+    // rf. https://github.com/webpack/webpack/issues/4861
+    chunkFilename: dist.scripts('[name].[hash].js'),
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
