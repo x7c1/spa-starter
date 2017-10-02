@@ -21,7 +21,12 @@ const createButton = () => {
   const button = document.createElement('button');
   button.innerHTML = 'load scripts';
   button.onclick = event => {
-    debug(event);
+    debug('clicked!', event);
+
+    import(/* webpackChunkName: 'content-sample' */ './content-sample').then(module => {
+      const date = module.currentDate();
+      debug(date);
+    });
   };
   return button;
 };
