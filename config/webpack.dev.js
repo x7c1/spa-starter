@@ -13,9 +13,9 @@ module.exports = merge(common, {
     ],
   },
   output: {
+    // cannot use [chunkhash] in development
+    // https://github.com/webpack/webpack/issues/2393
     filename: dist.scripts('[name].[hash].js'),
-
-    // rf. https://github.com/webpack/webpack/issues/4861
     chunkFilename: dist.scripts('[name].[hash].js'),
   },
   plugins: [

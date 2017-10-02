@@ -9,7 +9,8 @@ module.exports = merge(common, {
   output: {
     filename: dist.scripts('[name].[chunkhash].js'),
 
-    // rf. https://github.com/webpack/webpack/issues/4861
+    // need to set chunkFilename to avoid naming problem
+    // https://github.com/webpack/webpack/issues/4861
     chunkFilename: dist.scripts('[name].[chunkhash].js'),
   },
   plugins: [
