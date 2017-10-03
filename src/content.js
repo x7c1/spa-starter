@@ -17,25 +17,33 @@ const createElement = () => {
   return element;
 };
 
-const createButton = () => {
+const createButton = ({ onLoad }) => {
   const button = document.createElement('button');
-  button.innerHTML = 'load scripts';
+  button.innerHTML = 'click me!';
   button.onclick = event => {
     debug('clicked!', event);
-
     import(/* webpackChunkName: 'content-sample' */ './content-sample').then(module => {
-      const date = module.currentDate();
-      debug(date);
+      onLoad({
+        createdAt: new Date(),
+        loadedAt: module.loadedDate,
+      });
     });
   };
   return button;
+};
+
+const createListener = element => event => {
+  const node = document.createElement('p');
+  const diff = event.createdAt.getTime() - event.loadedAt.getTime();
+  node.innerHTML = `elapsed msec: ${diff}`;
+  element.appendChild(node);
 };
 
 export const render = () => {
   debug('[init] render');
 
   const lazy = document.getElementById('sample-lazy-load');
-  lazy.appendChild(createButton());
+  lazy.appendChild(createButton({ onLoad: createListener(lazy) }));
 
   const area = document.getElementsByClassName('js-area')[0];
   area.appendChild(createImage());
