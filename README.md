@@ -49,7 +49,7 @@ $ npm run build
 
 ## Logging
 
-run following on browser's console.
+run following on browser console.
 
 ```
 > localStorage.debug = 'spa-starter:*';
