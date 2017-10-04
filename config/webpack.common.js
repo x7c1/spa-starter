@@ -8,9 +8,6 @@ module.exports = {
     app: [
       paths.src('index.js'),
     ],
-    vendor: [
-      'lodash',
-    ],
   },
   devtool: 'source-map',
   output: {
@@ -73,8 +70,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: paths.src('index.html'),
     }),
+    // rf. https://webpack.js.org/plugins/commons-chunk-plugin/#passing-the-minchunks-property-a-function
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'runtime'],
+      name: "vendor",
+      minChunks: module => {
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
     }),
   ]
 };
