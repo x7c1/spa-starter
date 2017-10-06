@@ -14,4 +14,9 @@ module.exports = {
   root: from('.'),
   src: from('src'),
   dist: from('dist'),
+  relative: {
+    dist: {
+      scripts: name => `scripts/${name}`,
+    },
+  },
 };

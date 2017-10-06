@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const paths = require('./project.paths');
 
 module.exports = {
@@ -10,7 +11,6 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    filename: 'bundle.js',
     path: paths.dist(),
   },
   module: {
@@ -69,6 +69,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: paths.src('index.html'),
+    }),
+    // rf. https://webpack.js.org/plugins/commons-chunk-plugin/#passing-the-minchunks-property-a-function
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks: module => {
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
     }),
   ]
 };

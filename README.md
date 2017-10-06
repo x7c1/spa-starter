@@ -46,3 +46,11 @@ $ npm run start
 # generate `./dist` directory
 $ npm run build
 ```
+
+## Logging
+
+run following on browser console.
+
+```
+> localStorage.debug = 'spa-starter:*';
+```
