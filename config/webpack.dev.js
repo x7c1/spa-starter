@@ -20,6 +20,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
 
     // HMR not supported by extract-text-webpack-plugin
     // https://github.com/webpack-contrib/extract-text-webpack-plugin/blob/master/README.md#usage
