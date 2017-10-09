@@ -14,17 +14,28 @@ Sample application to learn modern SPA development.
 │   ├── webpack.dev.js
 │   └── webpack.prod.js
 ├── dist
-│   ├── bundle.js
-│   ├── bundle.js.map
 │   ├── index.html
 │   ├── media
 │   │   └── owl.[hash].png
+│   ├── scripts
+│   │   ├── app.[hash].js
+│   │   ├── app.[hash].js.map
+│   │   ├── content-sample.[hash].js
+│   │   ├── content-sample.[hash].js.map
+│   │   ├── manifest.[hash].js
+│   │   ├── manifest.[hash].js.map
+│   │   ├── vendor.[hash].js
+│   │   └── vendor.[hash].js.map
 │   └── styles
 │       ├── app.[hash].css
 │       └── app.[hash].css.map
+├── scripts
+│   └── dev-server
+│       └── index.js
 └── src
     ├── assets
     │   └── owl.png
+    ├── content-sample.js
     ├── content.js
     ├── index.css
     ├── index.html
