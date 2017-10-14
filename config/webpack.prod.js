@@ -4,6 +4,8 @@ const merge = require('webpack-merge');
 const paths = require('./project.paths');
 const dist = paths.relative.dist;
 const common = require('./webpack.common');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = merge(common, {
   output: {
@@ -23,5 +25,9 @@ module.exports = merge(common, {
       filename: 'styles/[name].[contenthash].css',
       allChunks: true,
     }),
+    new UglifyJSPlugin({
+      sourceMap: true,
+    }),
+    new webpack.optimize.AggressiveMergingPlugin(),
   ],
 });
