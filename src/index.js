@@ -9,4 +9,8 @@ if (module.hot) {
     content.clean();
     content.render();
   });
+  module.hot.accept('./root', () => {
+    root.clean();
+    root.render();
+  });
 }
