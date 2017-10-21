@@ -16,6 +16,19 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: [
+            "stage-0",
+          ],
+          plugins: [
+            'transform-react-jsx',
+          ],
+        },
+      },
+      {
         test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
