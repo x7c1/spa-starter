@@ -1,16 +1,16 @@
 import * as content from "./content";
-import * as root from "./root";
+import * as main from "./main";
 
 content.render();
-root.render();
+main.render();
 
 if (module.hot) {
   module.hot.accept('./content', () => {
     content.clean();
     content.render();
   });
-  module.hot.accept('./root', () => {
-    root.clean();
-    root.render();
+  module.hot.accept('./main', () => {
+    main.clean();
+    main.render();
   });
 }

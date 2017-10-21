@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Main } from './Main';
+import { Root } from './Root';
 
 const root = {
   get node() {
@@ -9,7 +9,7 @@ const root = {
 };
 
 export const render = () => {
-  ReactDOM.render(<Main />, root.node);
+  ReactDOM.render(<Root />, root.node);
 };
 
 export const clean = () => {
