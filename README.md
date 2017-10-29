@@ -35,7 +35,7 @@ Sample application to learn modern SPA development.
 └── src
     ├── assets
     │   └── owl.png
-    ├── content-sample.js
+    ├── lazy-content.js
     ├── content.js
     ├── index.css
     ├── index.html

@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import './index.scss';
 import * as imageArea from './image-area';
+import * as lazyArea from './lazy-area';
 
 const debug = require('debug')('spa-starter:sample');
 
@@ -10,42 +11,21 @@ const createElement = () => {
   return element;
 };
 
-const createButton = ({ onLoad }) => {
-  const button = document.createElement('button');
-  button.innerHTML = 'click me!';
-  button.onclick = event => {
-    debug('clicked!', event);
-    import(/* webpackChunkName: 'content-sample' */ './content-sample').then(module => {
-      onLoad({
-        createdAt: new Date(),
-        loadedAt: module.loadedDate,
-      });
-    });
-  };
-  return button;
-};
-
-const createListener = element => event => {
-  const node = document.createElement('p');
-  const diff = event.createdAt.getTime() - event.loadedAt.getTime();
-  node.innerHTML = `elapsed msec: ${diff}`;
-  element.appendChild(node);
-};
-
 export const render = () => {
   debug('[init] render');
 
   const contentArea = document.getElementById('sample-content');
-  contentArea.innerHTML = imageArea.getHtml();
-
-  const lazy = document.getElementById('sample-lazy-load');
-  lazy.appendChild(createButton({ onLoad: createListener(lazy) }));
+  contentArea.innerHTML = [
+    imageArea.getHtml(),
+    lazyArea.getHtml(),
+  ].join('\n');
 
   const element = createElement();
   document.body.insertBefore(element, document.body.firstChild);
 
   imageArea.render();
-  debug('[done] render');
+  lazyArea.render();
+  debug('<- render');
 };
 
 export const clean = () => {
