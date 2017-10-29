@@ -1,16 +1,8 @@
 import _ from 'lodash';
 import './index.scss';
-import owl from './assets/owl.png'
-import imageArea from './image-area.html';
-import './image-area.scss';
+import * as imageArea from './image-area';
 
 const debug = require('debug')('spa-starter:sample');
-
-const createImage = () => {
-  const image = new Image();
-  image.src = owl;
-  return image;
-};
 
 const createElement = () => {
   const element = document.createElement('div');
@@ -44,16 +36,15 @@ export const render = () => {
   debug('[init] render');
 
   const contentArea = document.getElementById('sample-content');
-  contentArea.innerHTML = imageArea;
+  contentArea.innerHTML = imageArea.getHtml();
 
   const lazy = document.getElementById('sample-lazy-load');
   lazy.appendChild(createButton({ onLoad: createListener(lazy) }));
 
-  const area = document.getElementsByClassName('js-area')[0];
-  area.appendChild(createImage());
-
   const element = createElement();
   document.body.insertBefore(element, document.body.firstChild);
+
+  imageArea.render();
   debug('[done] render');
 };
 
