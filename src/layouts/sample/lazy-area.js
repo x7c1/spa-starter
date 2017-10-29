@@ -4,7 +4,7 @@ import './lazy-area.scss';
 const debug = require('debug')('spa-starter:lazy-area');
 
 const nodes = {
-  get area() {
+  get content() {
     return document.getElementById('sample-lazy-load');
   },
   get button() {
@@ -37,15 +37,15 @@ export const getHtml = () => html;
 export const render = () => {
   debug('-> render');
 
-  nodes.area.appendChild(createButton({
-    onLoad: createListener(nodes.area),
+  nodes.content.appendChild(createButton({
+    onLoad: createListener(nodes.content),
   }));
 };
 
 export const clean = () => {
   debug('-> clean');
 
-  while(nodes.area.firstChild) {
-    nodes.area.removeChild(nodes.area.firstChild);
+  while(nodes.content.firstChild) {
+    nodes.content.removeChild(nodes.content.firstChild);
   }
 };

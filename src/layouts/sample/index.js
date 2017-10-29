@@ -4,8 +4,8 @@ import * as lazyArea from './lazy-area';
 
 const debug = require('debug')('spa-starter:sample');
 
-const content = {
-  get node() {
+const nodes = {
+  get content() {
     return document.getElementById('sample-content');
   }
 };
@@ -17,7 +17,7 @@ export const render = () => {
     imageArea.getHtml(),
     lazyArea.getHtml(),
   ];
-  content.node.innerHTML = contents.join('\n');
+  nodes.content.innerHTML = contents.join('\n');
 
   imageArea.render();
   lazyArea.render();

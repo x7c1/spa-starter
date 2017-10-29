@@ -5,8 +5,11 @@ import './image-area.scss';
 const debug = require('debug')('spa-starter:image-area');
 
 const nodes = {
-  get area() {
+  get content() {
     return document.getElementsByClassName('image-area')[0];
+  },
+  get imageArea() {
+    return document.getElementsByClassName('js-area')[0];
   },
 };
 
@@ -20,15 +23,13 @@ export const getHtml = () => html;
 
 export const render = () => {
   debug('-> render');
-
-  const area = document.getElementsByClassName('js-area')[0];
-  area.appendChild(createImage());
+  nodes.imageArea.appendChild(createImage());
 };
 
 export const clean = () => {
   debug('-> clean');
 
-  while(nodes.area.firstChild) {
-    nodes.area.removeChild(nodes.area.firstChild);
+  while(nodes.content.firstChild) {
+    nodes.content.removeChild(nodes.content.firstChild);
   }
 };
