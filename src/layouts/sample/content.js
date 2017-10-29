@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import './index.scss';
 import owl from './assets/owl.png'
+import imageArea from './image-area.html';
 
 const debug = require('debug')('spa-starter:sample');
 
@@ -40,6 +41,9 @@ const createListener = element => event => {
 
 export const render = () => {
   debug('[init] render');
+
+  const contentArea = document.getElementById('sample-content');
+  contentArea.innerHTML = imageArea;
 
   const lazy = document.getElementById('sample-lazy-load');
   lazy.appendChild(createButton({ onLoad: createListener(lazy) }));
