@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import './index.css';
 import './index.scss';
 import owl from './assets/owl.png'
 

@@ -1,4 +1,4 @@
-@import './palette';
+@import '../../palette';
 
 /* sample comment */
 
@@ -27,7 +27,7 @@
 
     .css-area {
       background: {
-        image: url('./assets/owl.png');
+        image: url('assets/owl.png');
         repeat: no-repeat;
       }
     }
