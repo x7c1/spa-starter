@@ -21,6 +21,13 @@ module.exports = merge(common, {
     ], {
       root: paths.root(),
     }),
+    // need to create a production build on React
+    // https://reactjs.org/docs/optimizing-performance.html#webpack
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
     new ExtractTextPlugin({
       filename: 'styles/[name].[contenthash].css',
       allChunks: true,
