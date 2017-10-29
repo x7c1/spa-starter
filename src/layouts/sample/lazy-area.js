@@ -3,10 +3,17 @@ import './lazy-area.scss';
 
 const debug = require('debug')('spa-starter:lazy-area');
 
+const nodes = {
+  get area() {
+    return document.getElementById('sample-lazy-load');
+  },
+  get button() {
+    return document.getElementById('lazy-load-button');
+  },
+};
+
 const createButton = ({ onLoad }) => {
-  const button = document.createElement('button');
-  button.innerHTML = 'get or load content';
-  button.onclick = event => {
+  nodes.button.onclick = event => {
     debug('clicked!', event);
     import(/* webpackChunkName: 'content-sample' */ './lazy-content').then(module => {
       onLoad({
@@ -15,7 +22,7 @@ const createButton = ({ onLoad }) => {
       });
     });
   };
-  return button;
+  return nodes.button;
 };
 
 const createListener = element => event => {
@@ -29,6 +36,16 @@ export const getHtml = () => html;
 
 export const render = () => {
   debug('-> render');
-  const lazy = document.getElementById('sample-lazy-load');
-  lazy.appendChild(createButton({ onLoad: createListener(lazy) }));
+
+  nodes.area.appendChild(createButton({
+    onLoad: createListener(nodes.area),
+  }));
+};
+
+export const clean = () => {
+  debug('-> clean');
+
+  while(nodes.area.firstChild) {
+    nodes.area.removeChild(nodes.area.firstChild);
+  }
 };

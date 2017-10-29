@@ -27,4 +27,7 @@ export const render = () => {
 
 export const clean = () => {
   debug('-> clean');
+
+  imageArea.clean();
+  lazyArea.clean();
 };
