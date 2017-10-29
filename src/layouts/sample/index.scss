@@ -7,42 +7,6 @@
   padding: 1rem;
 }
 
-.sample-list {
-  padding: 0;
-
-  display: flex;
-  list-style: none;
-
-  .sample {
-    margin-left: 1rem;
-
-    .js-area, .css-area {
-      width: 64px;
-      height: 64px;
-      background: {
-        color: aliceblue;
-      }
-      border: 1px dotted gray;
-    }
-
-    .css-area {
-      background: {
-        image: url('assets/owl.png');
-        repeat: no-repeat;
-      }
-    }
-
-  }
-}
-
-.footer {
-  font-size: 0.9rem;
-  font-family: monospace;
-
-  a {
-    color: $sample_fg;
-  }
-}
 
 .sample-for-autoprefixer {
   border-radius: 5px;

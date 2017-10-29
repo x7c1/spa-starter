@@ -2,6 +2,7 @@ import _ from 'lodash';
 import './index.scss';
 import owl from './assets/owl.png'
 import imageArea from './image-area.html';
+import './image-area.scss';
 
 const debug = require('debug')('spa-starter:sample');
 
