@@ -12,7 +12,7 @@ const nodes = {
   },
 };
 
-const createButton = ({ onLoad }) => {
+const updateButton = ({ onLoad }) => {
   nodes.button.onclick = event => {
     debug('clicked!', event);
     import(/* webpackChunkName: 'lazy-content' */ './lazy-content').then(module => {
@@ -37,7 +37,7 @@ export const getHtml = () => html;
 export const render = () => {
   debug('-> render');
 
-  nodes.content.appendChild(createButton({
+  nodes.content.appendChild(updateButton({
     onLoad: createListener(nodes.content),
   }));
 };
