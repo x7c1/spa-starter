@@ -15,7 +15,7 @@ const nodes = {
 const createButton = ({ onLoad }) => {
   nodes.button.onclick = event => {
     debug('clicked!', event);
-    import(/* webpackChunkName: 'content-sample' */ './lazy-content').then(module => {
+    import(/* webpackChunkName: 'lazy-content' */ './lazy-content').then(module => {
       onLoad({
         createdAt: new Date(),
         loadedAt: module.loadedDate,

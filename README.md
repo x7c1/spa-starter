@@ -20,8 +20,8 @@ Sample application to learn modern SPA development.
 │   ├── scripts
 │   │   ├── app.[hash].js
 │   │   ├── app.[hash].js.map
-│   │   ├── content-sample.[hash].js
-│   │   ├── content-sample.[hash].js.map
+│   │   ├── lazy-content.[hash].js
+│   │   ├── lazy-content.[hash].js.map
 │   │   ├── manifest.[hash].js
 │   │   ├── manifest.[hash].js.map
 │   │   ├── vendor.[hash].js
