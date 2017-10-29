@@ -33,14 +33,22 @@ Sample application to learn modern SPA development.
 │   └── dev-server
 │       └── index.js
 └── src
-    ├── assets
-    │   └── owl.png
-    ├── lazy-content.js
-    ├── content.js
     ├── index.css
     ├── index.html
     ├── index.js
-    ├── index.scss
+    ├── layouts
+    │   └── sample
+    │       ├── assets
+    │       │   └── owl.png
+    │       ├── image-area.html
+    │       ├── image-area.js
+    │       ├── image-area.scss
+    │       ├── index.js
+    │       ├── index.scss
+    │       ├── lazy-area.html
+    │       ├── lazy-area.js
+    │       ├── lazy-area.scss
+    │       └── lazy-content.js
     └── palette.scss
 ```
 
