@@ -15,20 +15,17 @@ const nodes = {
   },
 };
 
-const updateButton = ({ onLoad }) => {
-  nodes.button.onclick = event => {
-    debug('clicked!', event);
-    import(/* webpackChunkName: 'lazy-content' */ './lazy-content').then(module => {
-      onLoad({
-        createdAt: new Date(),
-        loadedAt: module.loadedDate,
-      });
+const onClickListener = ({ onLoad }) => event => {
+  debug('clicked!', event);
+  import(/* webpackChunkName: 'lazy-content' */ './lazy-content').then(module => {
+    onLoad({
+      createdAt: new Date(),
+      loadedAt: module.loadedDate,
     });
-  };
-  return nodes.button;
+  });
 };
 
-const createListener = element => event => {
+const onLoadListener = element => event => {
   const node = document.createElement('p');
   const diff = event.createdAt.getTime() - event.loadedAt.getTime();
   node.innerHTML = `elapsed msec: ${diff}`;
@@ -37,10 +34,10 @@ const createListener = element => event => {
 
 const render = () => {
   debug('-> render');
-
-  nodes.content.appendChild(updateButton({
-    onLoad: createListener(nodes.content),
-  }));
+  nodes.button.onclick = onClickListener({
+    onLoad: onLoadListener(nodes.content),
+  });
+  nodes.content.appendChild(nodes.button);
 };
 
 export const lazyArea = Area.from(nodes, { html, render });
