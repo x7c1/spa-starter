@@ -1,11 +1,14 @@
 import html from './lazy-area.html';
 import './lazy-area.scss';
+import { Area } from './Area';
 
 const debug = require('debug')('spa-starter:lazy-area');
 
 const nodes = {
+  label: 'sample-lazy-load',
+
   get content() {
-    return document.getElementById('sample-lazy-load');
+    return document.getElementById(this.label);
   },
   get button() {
     return document.getElementById('lazy-load-button');
@@ -32,9 +35,7 @@ const createListener = element => event => {
   element.appendChild(node);
 };
 
-export const getHtml = () => html;
-
-export const render = () => {
+const render = () => {
   debug('-> render');
 
   nodes.content.appendChild(updateButton({
@@ -42,10 +43,4 @@ export const render = () => {
   }));
 };
 
-export const clean = () => {
-  debug('-> clean');
-
-  while(nodes.content.firstChild) {
-    nodes.content.removeChild(nodes.content.firstChild);
-  }
-};
+export const lazyArea = Area.from(nodes, { html, render });

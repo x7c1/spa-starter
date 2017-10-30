@@ -1,12 +1,15 @@
 import owl from './assets/owl.png'
 import html from './image-area.html';
+import { Area } from './Area';
 import './image-area.scss';
 
 const debug = require('debug')('spa-starter:image-area');
 
 const nodes = {
+  label: 'image-area',
+
   get content() {
-    return document.getElementsByClassName('image-area')[0];
+    return document.getElementsByClassName(this.label)[0];
   },
   get imageArea() {
     return document.getElementsByClassName('js-area')[0];
@@ -19,17 +22,9 @@ const createImage = () => {
   return image;
 };
 
-export const getHtml = () => html;
-
-export const render = () => {
+const render = () => {
   debug('-> render');
   nodes.imageArea.appendChild(createImage());
 };
 
-export const clean = () => {
-  debug('-> clean');
-
-  while(nodes.content.firstChild) {
-    nodes.content.removeChild(nodes.content.firstChild);
-  }
-};
+export const imageArea = Area.from(nodes, { html, render });
