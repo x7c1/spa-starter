@@ -1,6 +1,6 @@
 import html from './lazy-area.html';
 import './lazy-area.scss';
-import { Area } from './Area';
+import { SampleArea } from './SampleArea';
 
 const debug = require('debug')('spa-starter:lazy-area');
 
@@ -40,4 +40,4 @@ const render = () => {
   nodes.content.appendChild(nodes.button);
 };
 
-export const lazyArea = Area.from(nodes, { html, render });
+export const lazyArea = SampleArea.from(nodes, { html, render });

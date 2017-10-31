@@ -1,6 +1,6 @@
-const debug = require('debug')('spa-starter:Area');
+const debug = require('debug')('spa-starter:SampleArea');
 
-export class Area {
+export class SampleArea {
 
   /**
    * @param nodes
@@ -8,7 +8,7 @@ export class Area {
    * @param {Function} render - void => void
    */
   static from(nodes, { html, render }) {
-    return new Area({
+    return new SampleArea({
       onHtml: f => {
         f(html);
         render();
@@ -40,6 +40,6 @@ export class Area {
       this.clean();
       area.clean();
     };
-    return new Area({ onHtml, clean });
+    return new SampleArea({ onHtml, clean });
   }
 }

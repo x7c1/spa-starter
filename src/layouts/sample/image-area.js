@@ -1,6 +1,6 @@
 import owl from './assets/owl.png'
 import html from './image-area.html';
-import { Area } from './Area';
+import { SampleArea } from './SampleArea';
 import './image-area.scss';
 
 const debug = require('debug')('spa-starter:image-area');
@@ -27,4 +27,4 @@ const render = () => {
   nodes.imageArea.appendChild(createImage());
 };
 
-export const imageArea = Area.from(nodes, { html, render });
+export const imageArea = SampleArea.from(nodes, { html, render });
