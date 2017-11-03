@@ -1,6 +1,6 @@
 import './index.scss';
-import { imageArea } from './image-area';
-import { lazyArea }  from './lazy-area';
+import { ImageArea } from './ImageArea';
+import { LazyArea }  from './LazyArea';
 
 const debug = require('debug')('spa-starter:sample');
 
@@ -10,7 +10,7 @@ const nodes = {
   }
 };
 
-const area = imageArea.append(lazyArea);
+const area = ImageArea.append(LazyArea);
 
 export const render = () => {
   debug('-> render');
@@ -23,6 +23,5 @@ export const render = () => {
 
 export const clean = () => {
   debug('-> clean');
-
   area.clean();
 };

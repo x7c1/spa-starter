@@ -41,12 +41,12 @@ Sample application to learn modern SPA development.
     │       ├── assets
     │       │   └── owl.png
     │       ├── image-area.html
-    │       ├── image-area.js
+    │       ├── index.js
     │       ├── image-area.scss
     │       ├── index.js
     │       ├── index.scss
     │       ├── lazy-area.html
-    │       ├── lazy-area.js
+    │       ├── index.js
     │       ├── lazy-area.scss
     │       └── lazy-content.js
     └── palette.scss
