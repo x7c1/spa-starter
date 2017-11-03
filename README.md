@@ -38,17 +38,20 @@ Sample application to learn modern SPA development.
     ├── index.js
     ├── layouts
     │   └── sample
-    │       ├── assets
-    │       │   └── owl.png
-    │       ├── image-area.html
+    │       ├── ImageArea
+    │       │   ├── ImageArea.html
+    │       │   ├── ImageArea.scss
+    │       │   ├── assets
+    │       │   │   └── owl.png
+    │       │   └── index.js
+    │       ├── LazyArea
+    │       │   ├── LazyArea.html
+    │       │   ├── LazyArea.scss
+    │       │   ├── index.js
+    │       │   └── lazy-content.js
+    │       ├── SampleArea.js
     │       ├── index.js
-    │       ├── image-area.scss
-    │       ├── index.js
-    │       ├── index.scss
-    │       ├── lazy-area.html
-    │       ├── index.js
-    │       ├── lazy-area.scss
-    │       └── lazy-content.js
+    │       └── index.scss
     └── palette.scss
 ```
 
