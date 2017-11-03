@@ -48,7 +48,7 @@ Sample application to learn modern SPA development.
     │       │   ├── LazyArea.html
     │       │   ├── LazyArea.scss
     │       │   ├── index.js
-    │       │   └── lazy-content.js
+    │       │   └── LazyContent.js
     │       ├── SampleArea.js
     │       ├── index.js
     │       └── index.scss
