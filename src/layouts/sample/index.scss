@@ -1,5 +1,16 @@
 @import '../../palette';
 
+.sample-area {
+  padding: {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  &:not(:last-child) {
+    border-bottom: 1px dotted black;
+  }
+}
+
 /* sample comment */
 
 .sample-for-autoprefixer {

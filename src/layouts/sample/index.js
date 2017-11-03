@@ -1,6 +1,6 @@
-import './index.scss';
 import { ImageArea } from './ImageArea';
 import { LazyArea }  from './LazyArea';
+import './index.scss';
 
 const debug = require('debug')('spa-starter:sample');
 

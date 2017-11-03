@@ -1,5 +1,4 @@
 import html from './LazyArea.html';
-import './LazyArea.scss';
 import { SampleArea } from '../SampleArea';
 
 const debug = require('debug')('spa-starter:lazy-area');
