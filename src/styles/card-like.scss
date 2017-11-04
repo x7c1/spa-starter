@@ -1,8 +1,10 @@
 @import './palette';
 
 @mixin card-like {
+  max-width: 640px;
+
   padding: 1rem;
-  margin: 0.75rem;
+  margin: 0.75rem auto;
 
   background-color: white;
   border-radius: 3px;
