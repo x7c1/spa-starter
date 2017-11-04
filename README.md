@@ -37,7 +37,7 @@ Sample application to learn modern SPA development.
     ├── index.js
     ├── index.scss
     ├── layouts
-    │   └── sample
+    │   └── samples
     │       ├── ImageArea
     │       │   ├── ImageArea.html
     │       │   ├── ImageArea.scss
