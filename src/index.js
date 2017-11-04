@@ -1,11 +1,11 @@
-import * as content from "./layouts/sample";
+import * as sample from "./layouts/sample";
 import './index.scss';
 
-content.render();
+sample.render();
 
 if (module.hot) {
   module.hot.accept('./layouts/sample', () => {
-    content.clean();
-    content.render();
+    sample.clean();
+    sample.render();
   });
 }
