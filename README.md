@@ -33,9 +33,9 @@ Sample application to learn modern SPA development.
 │   └── dev-server
 │       └── index.js
 └── src
-    ├── index.css
     ├── index.html
     ├── index.js
+    ├── index.scss
     ├── layouts
     │   └── sample
     │       ├── ImageArea
@@ -43,15 +43,19 @@ Sample application to learn modern SPA development.
     │       │   ├── ImageArea.scss
     │       │   ├── assets
     │       │   │   └── owl.png
+    │       │   ├── copyright.html
     │       │   └── index.js
     │       ├── LazyArea
     │       │   ├── LazyArea.html
+    │       │   ├── LazyArea.scss
     │       │   ├── LazyContent.js
     │       │   └── index.js
     │       ├── SampleArea.js
     │       ├── index.js
     │       └── index.scss
-    └── palette.scss
+    └── styles
+        ├── card-like.scss
+        └── palette.scss
 ```
 
 ## Running the Project
