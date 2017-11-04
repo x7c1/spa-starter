@@ -1,15 +1,16 @@
-import * as content from "./content";
-import * as main from "./main";
+import * as sample from './layouts/samples';
+import * as main from './layouts/ReactRoot/main';
+import './index.scss';
 
-content.render();
+sample.render();
 main.render();
 
 if (module.hot) {
-  module.hot.accept('./content', () => {
-    content.clean();
-    content.render();
+  module.hot.accept('./layouts/samples', () => {
+    sample.clean();
+    sample.render();
   });
-  module.hot.accept('./main', () => {
+  module.hot.accept('./layouts/ReactRoot/main', () => {
     main.clean();
     main.render();
   });

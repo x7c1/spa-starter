@@ -1,0 +1,5 @@
+@import '~styles/card-like';
+
+#sample-lazy-load {
+  @include card-like;
+}

@@ -1,63 +1,16 @@
-@import './palette';
+@import 'styles/card-like';
 
-/* sample comment */
-
-#sample-lazy-load {
-  border-bottom: 1px dotted black;
-  padding: 1rem;
-}
-
-.sample-list {
+html,
+body {
+  margin: 0;
   padding: 0;
-
-  display: flex;
-  list-style: none;
-
-  .sample {
-    margin-left: 1rem;
-
-    .js-area, .css-area {
-      width: 64px;
-      height: 64px;
-      background: {
-        color: aliceblue;
-      }
-      border: 1px dotted gray;
-    }
-
-    .css-area {
-      background: {
-        image: url('./assets/owl.png');
-        repeat: no-repeat;
-      }
-    }
-
-  }
+  height: 100%;
 }
 
-.footer {
-  font-size: 0.9rem;
-  font-family: monospace;
-
-  a {
-    color: $sample_fg;
-  }
+body {
+  background-color: whitesmoke;
 }
 
-.sample-for-autoprefixer {
-  border-radius: 5px;
-  display: flex;
-}
-
-/* sample to confirm options.safe mode of cssnano */
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.box {
-  animation-name: fadeOut;
+.starter-footer {
+  @include card-like;
 }
