@@ -1,5 +1,4 @@
 @import '../../../styles/card-like';
-@import '../../../palette';
 
 .image-area {
   @include card-like;
@@ -35,9 +34,5 @@
   .copyright {
     font-size: 0.9rem;
     font-family: monospace;
-
-    a {
-      color: $sample_fg;
-    }
   }
 }
