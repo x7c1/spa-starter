@@ -1,5 +1,5 @@
 import * as content from "./layouts/sample";
-import './index.css';
+import './index.scss';
 
 content.render();
 
