@@ -10,6 +10,11 @@ module.exports = {
     ],
   },
   devtool: 'source-map',
+  resolve: {
+    alias: {
+      styles: paths.src('styles'),
+    },
+  },
   output: {
     path: paths.dist(),
   },
@@ -27,6 +32,10 @@ module.exports = {
             'transform-react-jsx',
           ],
         },
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
       },
       {
         test: /\.(scss|css)$/,

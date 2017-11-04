@@ -1,0 +1,21 @@
+@import './palette';
+
+@mixin card-like {
+  padding: 1rem;
+  margin: 0.75rem;
+
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px 0 rgba(black, 0.2);
+
+  h3 {
+    margin: 0 -0.25rem 1rem -0.25rem;
+    padding: 0.2rem 0.2rem 0.5rem 0.2rem;
+    border-bottom: 1px solid gainsboro;
+
+    color: $starter_sample_fg;
+  }
+  ul {
+    margin: 0;
+  }
+}

@@ -1,0 +1,20 @@
+
+/* sample comment */
+
+.sample-for-autoprefixer {
+  border-radius: 5px;
+  display: flex;
+}
+
+/* sample to confirm options.safe mode of cssnano */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.box {
+  animation-name: fadeOut;
+}

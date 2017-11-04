@@ -1,13 +1,14 @@
-import * as content from "./content";
+import * as sample from "./layouts/sample";
 import * as main from "./main";
+import './index.scss';
 
-content.render();
+sample.render();
 main.render();
 
 if (module.hot) {
-  module.hot.accept('./content', () => {
-    content.clean();
-    content.render();
+  module.hot.accept('./layouts/sample', () => {
+    sample.clean();
+    sample.render();
   });
   module.hot.accept('./main', () => {
     main.clean();

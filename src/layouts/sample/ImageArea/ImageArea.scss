@@ -1,0 +1,33 @@
+@import '~styles/card-like';
+
+.image-area {
+  @include card-like;
+
+  .sample-list {
+    padding: 0;
+
+    display: flex;
+    list-style: none;
+
+    .sample {
+      margin-left: 1rem;
+
+      .js-area, .css-area, .html-area {
+        width: 64px;
+        height: 64px;
+        background: {
+          color: aliceblue;
+        }
+        border: 1px dotted gray;
+      }
+
+      .css-area {
+        background: {
+          image: url('assets/owl.png');
+          repeat: no-repeat;
+        }
+      }
+
+    }
+  }
+}
