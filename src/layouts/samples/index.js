@@ -6,7 +6,7 @@ const debug = require('debug')('spa-starter:sample');
 
 const nodes = {
   get content() {
-    return document.getElementById('sample-content');
+    return document.getElementById('webpack-samples');
   }
 };
 

@@ -1,0 +1,16 @@
+@import 'styles/card-like';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.starter-footer {
+  @include card-like;
+}

@@ -1,6 +1,8 @@
-@import '../../../palette';
+@import '~styles/card-like';
 
 .image-area {
+  @include card-like;
+
   .sample-list {
     padding: 0;
 
@@ -26,15 +28,6 @@
         }
       }
 
-    }
-  }
-
-  .copyright {
-    font-size: 0.9rem;
-    font-family: monospace;
-
-    a {
-      color: $sample_fg;
     }
   }
 }
