@@ -20,8 +20,8 @@ Sample application to learn modern SPA development.
 │   ├── scripts
 │   │   ├── app.[hash].js
 │   │   ├── app.[hash].js.map
-│   │   ├── content-sample.[hash].js
-│   │   ├── content-sample.[hash].js.map
+│   │   ├── lazy-content.[hash].js
+│   │   ├── lazy-content.[hash].js.map
 │   │   ├── manifest.[hash].js
 │   │   ├── manifest.[hash].js.map
 │   │   ├── vendor.[hash].js
@@ -33,14 +33,24 @@ Sample application to learn modern SPA development.
 │   └── dev-server
 │       └── index.js
 └── src
-    ├── assets
-    │   └── owl.png
-    ├── content-sample.js
-    ├── content.js
     ├── index.css
     ├── index.html
     ├── index.js
-    ├── index.scss
+    ├── layouts
+    │   └── sample
+    │       ├── ImageArea
+    │       │   ├── ImageArea.html
+    │       │   ├── ImageArea.scss
+    │       │   ├── assets
+    │       │   │   └── owl.png
+    │       │   └── index.js
+    │       ├── LazyArea
+    │       │   ├── LazyArea.html
+    │       │   ├── LazyContent.js
+    │       │   └── index.js
+    │       ├── SampleArea.js
+    │       ├── index.js
+    │       └── index.scss
     └── palette.scss
 ```
 
