@@ -1,5 +1,5 @@
 import * as sample from './layouts/samples';
-import * as main from "./layouts/ReactRoot/main";
+import * as main from './layouts/ReactRoot/main';
 import './index.scss';
 
 sample.render();
