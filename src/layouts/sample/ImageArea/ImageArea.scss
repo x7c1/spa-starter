@@ -1,6 +1,9 @@
+@import '../../../styles/card-like';
 @import '../../../palette';
 
 .image-area {
+  @include card-like;
+
   .sample-list {
     padding: 0;
 
