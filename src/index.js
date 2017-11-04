@@ -1,4 +1,4 @@
-import * as sample from "./layouts/sample";
+import * as sample from './layouts/samples';
 import * as main from "./layouts/ReactRoot/main";
 import './index.scss';
 
@@ -6,7 +6,7 @@ sample.render();
 main.render();
 
 if (module.hot) {
-  module.hot.accept('./layouts/sample', () => {
+  module.hot.accept('./layouts/samples', () => {
     sample.clean();
     sample.render();
   });
