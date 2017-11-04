@@ -1,5 +1,5 @@
 import * as sample from "./layouts/sample";
-import * as main from "./main";
+import * as main from "./layouts/ReactRoot/main";
 import './index.scss';
 
 sample.render();
@@ -10,7 +10,7 @@ if (module.hot) {
     sample.clean();
     sample.render();
   });
-  module.hot.accept('./main', () => {
+  module.hot.accept('./layouts/ReactRoot/main', () => {
     main.clean();
     main.render();
   });

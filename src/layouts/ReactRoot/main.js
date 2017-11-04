@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Root } from './Root';
+import { ReactRoot } from './index';
 const debug = require('debug')('spa-starter:main');
 
 const root = {
   get node() {
-    return document.getElementById('root');
+    return document.getElementById('react-root');
   },
 };
 
 export const render = () => {
   debug('-> render');
-  ReactDOM.render(<Root />, root.node);
+  ReactDOM.render(<ReactRoot />, root.node);
   debug('<- render');
 };
 
