@@ -37,6 +37,10 @@ Sample application to learn modern SPA development.
     ├── index.js
     ├── index.scss
     ├── layouts
+    │   ├── ReactRoot
+    │   │   ├── ReactRoot.scss
+    │   │   ├── index.js
+    │   │   └── main.js
     │   └── sample
     │       ├── ImageArea
     │       │   ├── ImageArea.html
