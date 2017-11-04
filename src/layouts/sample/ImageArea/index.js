@@ -1,5 +1,6 @@
 import owl from './assets/owl.png'
 import html from './ImageArea.html';
+import copyright from './copyright.html';
 import { SampleArea } from '../SampleArea';
 import './ImageArea.scss';
 
@@ -25,6 +26,7 @@ const createImage = () => {
 const render = () => {
   debug('-> render');
   nodes.imageArea.appendChild(createImage());
+  debug(copyright);
 };
 
 export const ImageArea = SampleArea.from(nodes, { html, render });
