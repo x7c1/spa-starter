@@ -45,6 +45,7 @@
   "dependencies": {
     "debug": "^3.0.1",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0"
   }
 }
