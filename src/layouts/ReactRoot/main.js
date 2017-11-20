@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, Switch } from 'react-router';
+
 import { ReactRoot } from './index';
 const debug = require('debug')('spa-starter:main');
 
@@ -11,7 +13,16 @@ const root = {
 
 export const render = () => {
   debug('-> render');
-  ReactDOM.render(<ReactRoot />, root.node);
+
+  const routes = (
+    <Switch>
+      {require('../pages/Home/route').default()}
+    </Switch>
+  );
+  ReactDOM.render(
+    <ReactRoot {...{ routes }} />,
+    root.node
+  );
   debug('<- render');
 };
 
