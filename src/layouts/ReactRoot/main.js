@@ -17,6 +17,7 @@ export const render = () => {
   const routes = (
     <Switch>
       {require('../pages/Home/route').default()}
+      {require('../pages/SamplePage/route').default()}
     </Switch>
   );
   ReactDOM.render(
