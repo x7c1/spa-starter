@@ -1,16 +1,15 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { SamplePage } from './index';
-import { CoreLayout } from '../../CoreLayout/index';
+import { onCoreLayout } from '../../CoreLayout/onCoreLayout';
+
+const setup = () => require.ensure([], require => {
+  return require('./index').SamplePage;
+}, 'sample-page');
 
 export default () => (
   <Route
     path='/sample-page'
     exact
-    component={props => (
-      <CoreLayout>
-        <SamplePage />
-      </CoreLayout>
-    )}
+    component={onCoreLayout(setup)}
   />
 );

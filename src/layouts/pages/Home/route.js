@@ -1,16 +1,15 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { Home } from './index';
-import { CoreLayout } from '../../CoreLayout/index';
+import { onCoreLayout } from '../../CoreLayout/onCoreLayout';
+
+const setup = () => require.ensure([], require => {
+  return require('./index').Home;
+}, 'home');
 
 export default () => (
   <Route
     path='/'
     exact
-    component={props => (
-      <CoreLayout>
-        <Home />
-      </CoreLayout>
-    )}
+    component={onCoreLayout(setup)}
   />
 );
