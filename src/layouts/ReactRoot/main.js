@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Switch } from 'react-router';
-
+import { Route, Switch } from 'react-router';
 import { ReactRoot } from './index';
+import { onCoreLayout } from '../CoreLayout/onCoreLayout';
+import { setupHome } from '../pages/Home/setupHome';
+import { setupSamplePage } from '../pages/SamplePage/setupSamplePage';
+
 const debug = require('debug')('spa-starter:main');
 
 const root = {
@@ -16,8 +19,16 @@ export const render = () => {
 
   const routes = (
     <Switch>
-      {require('../pages/Home/route').default()}
-      {require('../pages/SamplePage/route').default()}
+      <Route
+        path='/'
+        exact
+        component={onCoreLayout(setupHome)}
+      />
+      <Route
+        path='/sample-page'
+        exact
+        component={onCoreLayout(setupSamplePage)}
+      />
     </Switch>
   );
   ReactDOM.render(
