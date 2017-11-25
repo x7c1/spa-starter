@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './CoreLayout.scss';
 
 export const CoreLayout = props => {
   return (
-    <div className='react-sample-area'>
+    <div className='core-layout'>
       <h3>Hello, React!</h3>
       <nav>
         <ul>
