@@ -6,9 +6,12 @@ export const onCoreLayout = loadPromise => props => {
   return (
     <CoreLayout>
       <LazyLoader
-        beforeLoad={() => null}
-        afterLoad={Component => <Component />}
         loadPromise={loadPromise}
+        beforeLoad={() => <div className='react-sample-area' />}
+        afterLoad={Component => <Component />}
+        onError={error => {
+          console.error('onCoreLayout', '[unexpected]', error);
+        }}
       />
     </CoreLayout>
   );

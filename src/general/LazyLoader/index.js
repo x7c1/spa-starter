@@ -44,10 +44,10 @@ export class LazyLoader extends React.Component {
     }
     this.props.loadPromise()
       .then(result => {
-        return this._updateLoadedValue(result);
+        this._updateLoadedValue(result);
       })
       .catch(error => {
-        console.error('LazyLoader', 'unexpected error:', error);
+        this.props.onError(error);
       });
   }
 
