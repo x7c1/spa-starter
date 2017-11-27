@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react';
 
-/**
- * render a component given by:
- *   beforeLoad if loadPromise not completed.
- *   afterLoad if loadPromise completed.
+/*
+  Render a component given by:
+  - props.beforeLoad if props.loadPromise not completed.
+  - props.afterLoad if props.loadPromise completed.
+
+  Call props.onError if props.loadPromise has an error.
  */
 export class LazyLoader extends React.Component {
 
