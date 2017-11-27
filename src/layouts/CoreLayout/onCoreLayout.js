@@ -1,6 +1,6 @@
 import React from 'react';
+import { LazyLoader } from 'general/LazyLoader';
 import { CoreLayout } from './index';
-import { LazyLoader } from '../../general/LazyLoader';
 
 export const onCoreLayout = loadPromise => props => {
   return (
