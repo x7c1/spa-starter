@@ -2,11 +2,11 @@ import React from 'react';
 import { LazyLoader } from 'general/LazyLoader';
 import { CoreLayout } from './index';
 
-export const onCoreLayout = loadPromise => props => {
+export const onCoreLayout = loadComponent => props => {
   return (
     <CoreLayout>
       <LazyLoader
-        loadPromise={loadPromise}
+        loadPromise={loadComponent}
         beforeLoad={() => <div className='react-sample-area' />}
         afterLoad={Component => <Component />}
         onError={error => {
