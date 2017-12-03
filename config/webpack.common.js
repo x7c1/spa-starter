@@ -13,6 +13,7 @@ module.exports = {
   resolve: {
     alias: {
       styles: paths.src('styles'),
+      general: paths.src('general'),
     },
   },
   output: {

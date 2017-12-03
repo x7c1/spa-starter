@@ -21,10 +21,21 @@ Sample application to learn modern SPA development.
     ├── index.js
     ├── index.scss
     ├── layouts
+    │   ├── CoreLayout
+    │   │   ├── CoreLayout.scss
+    │   │   ├── index.js
+    │   │   └── onCoreLayout.js
     │   ├── ReactRoot
     │   │   ├── ReactRoot.scss
     │   │   ├── index.js
     │   │   └── main.js
+    │   ├── pages
+    │   │   ├── Home
+    │   │   │   ├── index.js
+    │   │   │   └── setupHome.js
+    │   │   └── SamplePage
+    │   │       ├── index.js
+    │   │       └── setupSamplePage.js
     │   └── samples
     │       ├── ImageArea
     │       │   ├── ImageArea.html

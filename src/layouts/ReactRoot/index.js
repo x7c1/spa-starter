@@ -1,16 +1,24 @@
 import React from 'react';
+import { Router } from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory';
 import './ReactRoot.scss';
+
+const history = createBrowserHistory();
 
 const debug = require('debug')('spa-starter:ReactRoot');
 
 export class ReactRoot extends React.Component {
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     debug('-> render');
     return (
-      <div className='react-sample-area'>
-        <h3>Hello, React!</h3>
-        <span>sample text</span>
-      </div>
+      <Router history={history}>
+        {this.props.routes}
+      </Router>
     );
   }
 }
