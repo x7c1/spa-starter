@@ -1,30 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { increase } from './counter/actions';
+import { counterButton } from './dispatchers/counterButton';
 
 const SamplePageView = props => {
+  const button = props.counterButton();
   return (
     <div className='react-sample-area'>
-      <button
-        type='button'
-        onClick={props.increment}
-      >
-        increment counter : {props.currentCount}
+      <button type='button' onClick={button.onClick}>
+        {button.label}
       </button>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    currentCount: state.sampleCounter.count,
-  };
-};
+const mapStateToProps = state => state;
 
-const mapDispatchToProps = dispatch => ({
-  increment: () => {
-    dispatch(increase(1));
-  },
-});
+const mapDispatchToProps = {
+  counterButton,
+};
 
 export const SamplePage = connect(mapStateToProps, mapDispatchToProps)(SamplePageView);
