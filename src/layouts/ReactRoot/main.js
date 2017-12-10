@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router';
+
 import { ReactRoot } from './index';
 import { onCoreLayout } from '../CoreLayout/onCoreLayout';
 import { setupHome } from '../pages/Home/setupHome';
@@ -14,7 +15,10 @@ const root = {
   },
 };
 
-export const render = () => {
+/**
+ * @param {RichStore} store
+ */
+export const render = store => {
   debug('-> render');
 
   const routes = (
@@ -22,17 +26,17 @@ export const render = () => {
       <Route
         path='/'
         exact
-        component={onCoreLayout(setupHome)}
+        component={onCoreLayout(setupHome(store))}
       />
       <Route
         path='/sample-page'
         exact
-        component={onCoreLayout(setupSamplePage)}
+        component={onCoreLayout(setupSamplePage(store))}
       />
     </Switch>
   );
   ReactDOM.render(
-    <ReactRoot {...{ routes }} />,
+    <ReactRoot {...{ routes, store }} />,
     root.node
   );
   debug('<- render');

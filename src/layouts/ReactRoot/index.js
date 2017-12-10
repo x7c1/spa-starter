@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import './ReactRoot.scss';
@@ -16,9 +17,11 @@ export class ReactRoot extends React.Component {
   render() {
     debug('-> render');
     return (
-      <Router history={history}>
-        {this.props.routes}
-      </Router>
+      <Provider store={this.props.store.rawStore}>
+        <Router history={history}>
+          {this.props.routes}
+        </Router>
+      </Provider>
     );
   }
 }
