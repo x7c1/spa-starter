@@ -1,7 +1,7 @@
-import { Sealer } from './Sealer';
+import { ReduxSealer } from './ReduxSealer';
 
 export const seal = ({ dispatch, getState }) => next => action => {
-  if (action.prototype instanceof Sealer) {
+  if (action.prototype instanceof ReduxSealer) {
     return new action({ dispatch, getState });
   }
   return next(action);

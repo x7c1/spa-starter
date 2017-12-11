@@ -1,7 +1,7 @@
-import { Sealer } from 'general/redux-seal/Sealer';
+import { ReduxSealer } from 'general/redux-seal/ReduxSealer';
 import { increase } from '../counter/actions';
 
-export class CounterButton extends Sealer {
+export class CounterButton extends ReduxSealer {
 
   onClick = () => {
     this.dispatch(increase(1));

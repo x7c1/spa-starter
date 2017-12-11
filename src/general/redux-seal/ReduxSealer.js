@@ -1,4 +1,4 @@
-export class Sealer {
+export class ReduxSealer {
 
   constructor({ dispatch, getState }) {
     this.dispatch = dispatch;
