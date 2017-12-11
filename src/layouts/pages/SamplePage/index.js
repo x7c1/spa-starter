@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { CounterButton } from './dispatchers/counterButton';
+import { CounterButton } from './dispatchers/CounterButton';
 
 const SamplePageView = props => {
   const button = props.createCounterButton();
