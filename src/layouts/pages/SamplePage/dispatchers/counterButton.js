@@ -1,7 +1,7 @@
 import { Sealer } from 'general/redux-seal/Sealer';
 import { increase } from '../counter/actions';
 
-export const counterButton = () => class CounterButton extends Sealer {
+export class CounterButton extends Sealer {
 
   onClick = () => {
     this.dispatch(increase(1));
@@ -14,4 +14,4 @@ export const counterButton = () => class CounterButton extends Sealer {
   get _currentCount() {
     return this.state.sampleCounter.count;
   }
-};
+}
