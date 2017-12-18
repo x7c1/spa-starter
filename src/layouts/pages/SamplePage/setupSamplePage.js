@@ -1,5 +1,5 @@
 /**
- * @param {RichStore} store
+ * @param {EnhancedStore} store
  */
 export const setupSamplePage = store => () => require.ensure([], require => {
 

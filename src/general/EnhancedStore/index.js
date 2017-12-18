@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-export class RichStore {
+export class EnhancedStore {
 
   /**
    * @param store - redux store

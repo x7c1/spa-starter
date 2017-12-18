@@ -16,7 +16,7 @@ const root = {
 };
 
 /**
- * @param {RichStore} store
+ * @param {EnhancedStore} store
  */
 export const render = store => {
   debug('-> render');
