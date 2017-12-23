@@ -1,9 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { CounterButton } from './dispatchers/CounterButton';
 
-export const SamplePage = props => {
+const SamplePageView = props => {
+  const button = props.createCounterButton();
   return (
     <div className='react-sample-area'>
-      <span>sample</span>
+      <button type='button' onClick={button.onClick}>
+        {button.label}
+      </button>
     </div>
   );
 };
+
+const mapStateToProps = state => state;
+
+const mapDispatchToProps = {
+  createCounterButton: () => CounterButton,
+};
+
+export const SamplePage = connect(mapStateToProps, mapDispatchToProps)(SamplePageView);
