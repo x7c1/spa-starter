@@ -9,7 +9,8 @@ phases:
       - npm run build
   post_build:
     commands:
-      - ls -al $CODEBUILD_SRC_DIR
+      - ls -al $CODEBUILD_SRC_DIR/dist/*
+      - aws s3 ls
 artifacts:
   files:
     - 'dist/**/*'
