@@ -10,7 +10,6 @@ phases:
   post_build:
     commands:
       - ls -al $CODEBUILD_SRC_DIR/dist/*
-      - aws s3 ls
       - aws s3 sync ./dist s3://$APP_BUCKET_PATH --delete
 artifacts:
   files:
