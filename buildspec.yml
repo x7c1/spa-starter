@@ -1,0 +1,15 @@
+version: 0.1
+
+phases:
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 sync ./dist s3://$APP_BUCKET_PATH --delete
+artifacts:
+  files:
+    - 'dist/**/*'
